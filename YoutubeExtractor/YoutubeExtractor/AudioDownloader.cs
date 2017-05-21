@@ -81,16 +81,6 @@ namespace YoutubeExtractor
         {
             var videoDownloader = new VideoDownloader(this.Video, path, this.BytesToDownload);
 
-            videoDownloader.DownloadProgressChanged += (sender, args) =>
-            {
-                if (this.DownloadProgressChanged != null)
-                {
-                    this.DownloadProgressChanged(this, args);
-
-                    this.isCanceled = args.Cancel;
-                }
-            };
-
             videoDownloader.Execute();
         }
 

@@ -7,15 +7,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YoutubeExtractor", "Youtube
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExampleApplication", "ExampleApplication\ExampleApplication.csproj", "{B894B26A-A518-4366-B31C-D90489A0F138}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YoutubeExtractor_Portable", "YoutubeExtractor\YoutubeExtractor_Portable.csproj", "{1BB4CF4D-3617-4A23-B51A-DA7711E6F8EB}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExampleApplication.Portable", "ExampleApplication.Portable\ExampleApplication.Portable.csproj", "{D71C979F-7F55-4AD3-854C-7F1FFF35B4F0}"
-	ProjectSection(ProjectDependencies) = postProject
-		{1BB4CF4D-3617-4A23-B51A-DA7711E6F8EB} = {1BB4CF4D-3617-4A23-B51A-DA7711E6F8EB}
-	EndProjectSection
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YoutubeExtractor.Tests", "YoutubeExtractor.Tests\YoutubeExtractor.Tests.csproj", "{CE76B74C-BD0C-4768-8F8B-78E0FBD46FBC}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -31,18 +22,6 @@ Global
 		{B894B26A-A518-4366-B31C-D90489A0F138}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B894B26A-A518-4366-B31C-D90489A0F138}.Release|Any CPU.Build.0 = Release|Any CPU
 		{B894B26A-A518-4366-B31C-D90489A0F138}.Release|Any CPU.Deploy.0 = Release|Any CPU
-		{1BB4CF4D-3617-4A23-B51A-DA7711E6F8EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1BB4CF4D-3617-4A23-B51A-DA7711E6F8EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1BB4CF4D-3617-4A23-B51A-DA7711E6F8EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1BB4CF4D-3617-4A23-B51A-DA7711E6F8EB}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D71C979F-7F55-4AD3-854C-7F1FFF35B4F0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D71C979F-7F55-4AD3-854C-7F1FFF35B4F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D71C979F-7F55-4AD3-854C-7F1FFF35B4F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D71C979F-7F55-4AD3-854C-7F1FFF35B4F0}.Release|Any CPU.Build.0 = Release|Any CPU
-		{CE76B74C-BD0C-4768-8F8B-78E0FBD46FBC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{CE76B74C-BD0C-4768-8F8B-78E0FBD46FBC}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{CE76B74C-BD0C-4768-8F8B-78E0FBD46FBC}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{CE76B74C-BD0C-4768-8F8B-78E0FBD46FBC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

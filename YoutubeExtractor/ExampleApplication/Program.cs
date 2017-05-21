@@ -76,7 +76,7 @@ namespace ExampleApplication
                 RemoveIllegalPathCharacters(video.Title) + video.VideoExtension));
 
             // Register the ProgressChanged event and print the current progress
-            videoDownloader.DownloadProgressChanged += (sender, args) => Console.WriteLine(args.ProgressPercentage);
+            //videoDownloader.DownloadProgressChanged += (sender, args) => Console.WriteLine(args.ProgressPercentage);
 
             /*
              * Execute the video downloader.
@@ -87,8 +87,14 @@ namespace ExampleApplication
 
         private static void Main()
         {
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine("=================================================");
+            Console.WriteLine("YouTube Extractor OCTANE Edition");
+            Console.WriteLine("=================================================");
+            Console.ForegroundColor = ConsoleColor.White;
             // Our test youtube link
-            const string link = "https://www.youtube.com/watch?v=YQHsXMglC9A";
+            Console.Write("Enter video URL: ");
+            string link = Console.ReadLine();
 
             /*
              * Get the available video formats.
