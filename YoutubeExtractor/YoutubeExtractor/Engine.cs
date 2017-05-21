@@ -16,11 +16,11 @@ namespace YoutubeExtractor
             ServicePointManager.DefaultConnectionLimit = 10000;
         }
 
-        public void SplitDownloadArray(string URL, double Parts, string fileout, Action<byte[]> callback)
+        public void SplitDownloadArray(string URL, double Parts, Action<byte[]> callback)
         {
             try
             {
-                Parallel.Invoke(() => DownloadByteArray(URL, Parts, fileout, callback));
+                Parallel.Invoke(() => DownloadByteArray(URL, Parts, callback));
             }
             catch (Exception ex)
             {
@@ -29,7 +29,7 @@ namespace YoutubeExtractor
             }
         }
 
-        internal async void DownloadByteArray(string URL, double Parts, string fileout, Action<byte[]> callback)
+        internal async void DownloadByteArray(string URL, double Parts, Action<byte[]> callback)
         {
             var responseLength = WebRequest.Create(URL).GetResponse().ContentLength;
             var partSize = (long)Math.Floor(responseLength / Parts);
@@ -95,23 +95,12 @@ namespace YoutubeExtractor
             finally
             {
                 ms.Flush();
-                
-                StreamWriter writer = new StreamWriter(ms);
-
-
-                //You have to rewind the MemoryStream before copying
-                ms.Seek(0, SeekOrigin.Begin);
-
-                using (FileStream fs = new FileStream(fileout, FileMode.OpenOrCreate))
+                ms.Close();
+                if (callback != null)
                 {
-                    ms.CopyTo(fs);
-                    fs.Flush();
+                    callback(ms.ToArray());
                 }
 
-                ms.Close();
-
-                Console.WriteLine("Done!");
-                
             }
         }
     }

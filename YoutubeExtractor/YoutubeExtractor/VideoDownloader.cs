@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Net;
 using System.Text.RegularExpressions;
 
@@ -32,7 +33,10 @@ namespace YoutubeExtractor
                 string my_String = Regex.Replace(fileout, @"[^0-9a-zA-Z]+", ",");
 
                 Console.WriteLine(my_String);
-                Engine.SplitDownloadArray(response.ResponseUri.ToString(), 4, my_String + ".mp4", (x) => { });
+                Engine.SplitDownloadArray(response.ResponseUri.ToString(), 4, (x) => {
+                    File.WriteAllBytes(my_String + ".mp4", x);
+                    Console.WriteLine("Done!");
+                });
                 Console.ReadLine();
             }
         }
