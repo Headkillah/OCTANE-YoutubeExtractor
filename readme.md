@@ -1,7 +1,7 @@
 # OCTANE-YoutubeExtractor
 
 ## Overview
-YoutubeExtractor is a library for .NET, written in C#, that allows to download videos from YouTube and/or extract their audio track (audio extraction currently only for flash videos).
+YoutubeExtractor is a library for .NET, written in C#, that allows to download videos from YouTube and/or extract their audio track (audio extraction currently only for flash videos). This fork is decicated to be used as a sample implementation of Octane Download Engine.
 
 ## License
 
